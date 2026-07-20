@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf
+docs: https://curanahealth.com/interoperability-api/
+summary:
+  types: [oauth2]
+  standard: SMART on FHIR / OAuth 2.0
+  patient_authorization: true
+  registration_required: true
+notes: >-
+  The Curana Health Interoperability (Patient Access) API uses OAuth 2.0 for member
+  authorization, consistent with the CMS-9115-F Patient Access API and ONC 21st Century
+  Cures Act requirements. Third-party application owners must register (Sandbox and/or
+  Production) via the Patient API Access form before receiving credentials. Access tokens
+  carry explicitly-declared scopes that gate which FHIR resources an app may read;
+  wildcards are not supported. A member may revoke consent at any time, after which the
+  app's token is invalidated (invalid-token responses). The public Provider Directory
+  surface is reachable without patient authorization per CMS rules.
+schemes:
+- name: OAuth2
+  type: oauth2
+  description: OAuth 2.0 member authorization; access tokens scoped per FHIR resource.
+  sources: [https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf]
+registration:
+  url: https://curanahealth.com/patient-api-access-form/
+  access_tiers: [Sandbox, Production, Sandbox and Production]
