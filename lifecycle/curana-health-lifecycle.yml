@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: searched
+source: https://curanahealth.com/interoperability-api/
+versioning:
+  scheme: uri-path
+  current: v1
+  path: /v1/api
+  docs: https://curanahealth.com/interoperability-api/
+release_policy:
+  url: https://curanahealth.com/wp-content/uploads/2025/11/CuranaCMSAPI-Release-Policy-Clean-and-Final.pdf
+release_notes:
+  url: https://curanahealth.com/wp-content/uploads/2026/04/CMS_API_Releases-Notes-1.pdf
+  current_version: '1.0'
+usage_policy:
+  url: https://curanahealth.com/wp-content/uploads/2025/11/CMSAPI-Usage-Policy-Clean-and-Final.pdf
+terms_of_service:
+  url: https://curanahealtstg.wpenginepowered.com/wp-content/uploads/CuranaCMSAPI-Terms-of-Service-Clean-and-Final.pdf
+deprecation:
+  policy_url: https://curanahealth.com/wp-content/uploads/2025/11/CuranaCMSAPI-Release-Policy-Clean-and-Final.pdf
+  note: Version and release management governed by the published CMS API Release Policy.
+status_page: null
+sla: null
+support:
+  patient_navigator_line: '877.279.5960'
+  compliance_hotline: '844.317.9059'
+deprecated_operations: []
+notes: >-
+  No public status page or published uptime SLA was found. Versioning is via the /v1 URI
+  path. Release cadence and version support are governed by the CMS API Release Policy;
+  Release Notes are published at version 1.0.

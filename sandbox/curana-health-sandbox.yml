@@ -1,0 +1,17 @@
+generated: '2026-07-18'
+method: searched
+source: https://curanahealth.com/patient-api-access-form/
+docs: https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf
+environments:
+- name: Sandbox
+  access: by registration (Patient API Access form; select "Sandbox" or "Sandbox and Production")
+- name: Production
+  access: by registration (select "Production" or "Sandbox and Production")
+registration_url: https://curanahealth.com/patient-api-access-form/
+test_values: null
+notes: >-
+  Curana Health offers a dedicated Sandbox environment for third-party application owners,
+  selectable on the Patient API Access registration form (access types: Sandbox,
+  Production, or Sandbox and Production). No public/magic test credentials, test member
+  identifiers, or hosted test tokens are published — sandbox credentials are issued after
+  registration. No test values are invented here.

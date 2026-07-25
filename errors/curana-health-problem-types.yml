@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: searched
+source: https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf
+format: fhir-operation-outcome
+envelope:
+  resourceType: OperationOutcome
+  note: >-
+    FHIR R4 APIs return a FHIR OperationOutcome resource on error, with issue[] entries
+    carrying severity, code, and diagnostics. HTTP status codes below are the standard
+    FHIR RESTful set; the User Guide specifically notes authorization/configuration
+    errors and invalid-token (revoked-consent) conditions.
+problems:
+- status: 400
+  fhir_issue: invalid
+  title: Bad request
+  remediation: Correct malformed search parameters (e.g. offset/limit) or resource path.
+- status: 401
+  fhir_issue: login / security
+  title: Unauthorized (missing or invalid access token)
+  remediation: >-
+    Obtain a valid OAuth 2.0 access token; a member may have revoked consent, invalidating
+    the token — re-run the authorization flow.
+- status: 403
+  fhir_issue: forbidden
+  title: Forbidden (insufficient scope)
+  remediation: >-
+    Requested scope was not explicitly granted; scopes must be declared and wildcards are
+    not supported. Request the scope covering the target resource.
+- status: 404
+  fhir_issue: not-found
+  title: Resource not found
+  remediation: Verify the resource type and id; confirm the resource is exposed by this API.
+- status: 429
+  fhir_issue: throttled
+  title: Too many requests
+  remediation: Back off and retry; respect any rate limiting on the FHIR endpoint.
+- status: 500
+  fhir_issue: exception
+  title: Internal server error
+  remediation: Transient server error; retry with backoff or contact API support.
+notes: >-
+  Status/title/remediation are derived from the documented FHIR R4 RESTful error model and
+  the User Guide's authorization/invalid-token language; a formal per-code error reference
+  is not separately published by Curana Health.

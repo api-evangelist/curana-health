@@ -1,8 +1,17 @@
 aid: curana-health
 name: Curana Health
-description: 'Curana Health is a company surfaced as a portfolio company of nea and added to the API Evangelist
-  network as a stub for enrichment. Sector: digital-health. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Curana Health is a value-based senior-living healthcare company delivering on-site
+  primary care, behavioral health, palliative care, integrated care management, and
+  chronic-condition management to 250,000+ residents across 2,000+ senior living and
+  skilled-nursing communities in more than 30 states, supported by 1,400+ providers, a
+  national medical group, Accountable Care Organizations (ACOs), and Medicare Advantage
+  Special Needs Plans. In support of the CMS Interoperability and Patient Access final rule
+  (CMS-9115-F) and the ONC 21st Century Cures Act final rule (45 CFR 170.213 / 170.215),
+  Curana Health publishes a standards-based FHIR R4 Interoperability (Patient Access) API at
+  fhir.curanahealth.com that lets Medicare Advantage members authorize third-party apps to
+  access their claims, encounter, and clinical data using OAuth 2.0, alongside a public
+  provider-directory surface.
 url: https://raw.githubusercontent.com/api-evangelist/curana-health/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +19,68 @@ x-backed-by:
 - nea
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://curanahealth.com/wp-content/uploads/2025/04/Curana-Health-Logo-Full-Color-1000px-300x84.webp
 tags:
 - Company
 - Digital Health
-apis: []
+- Healthcare
+- FHIR
+- Interoperability
+- Medicare Advantage
+- Senior Living
+- Patient Access
+- Value-Based Care
+- CMS-9115-F
+apis:
+- name: Curana Health Interoperability API
+  description: >-
+    Standards-based FHIR R4 (4.0.1) Patient Access API published for CMS-9115-F / ONC 21st
+    Century Cures Act compliance. Lets Medicare Advantage members authorize third-party
+    applications via OAuth 2.0 to read their claims, encounter, and clinical data (CARIN
+    Blue Button ExplanationOfBenefit, US Core clinical resources) and exposes a public
+    provider-directory / plan surface. Read-only GET access over /v1/api with offset/limit
+    pagination; responses are FHIR Bundles.
+  humanURL: https://curanahealth.com/interoperability-api/
+  baseURL: https://fhir.curanahealth.com/v1/api
+  tags:
+  - FHIR
+  - Patient Access
+  - Medicare Advantage
+  - Interoperability
+  properties:
+  - type: Documentation
+    url: https://curanahealth.com/interoperability-api/
+  - type: APIReference
+    url: https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf
+  - type: Authentication
+    url: authentication/curana-health-authentication.yml
+  - type: OAuthScopes
+    url: scopes/curana-health-scopes.yml
+  - type: Conventions
+    url: conventions/curana-health-conventions.yml
+  - type: Conformance
+    url: conformance/curana-health-conformance.yml
+  - type: ErrorCatalog
+    url: errors/curana-health-problem-types.yml
+  - type: DataModel
+    url: data-model/curana-health-data-model.yml
+  - type: MCPServer
+    url: mcp/curana-health-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +89,50 @@ maintainers:
 common:
 - type: Website
   url: https://curanahealth.com
+- type: DeveloperPortal
+  url: https://curanahealth.com/interoperability-api/
+- type: Documentation
+  url: https://curanahealth.com/interoperability-api/
+- type: APIReference
+  url: https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf
+- type: SignUp
+  url: https://curanahealth.com/patient-api-access-form/
+- type: TermsOfService
+  url: https://curanahealtstg.wpenginepowered.com/wp-content/uploads/CuranaCMSAPI-Terms-of-Service-Clean-and-Final.pdf
+- type: PrivacyPolicy
+  url: https://curanahealth.com/privacy-policy/
+- type: Compliance
+  url: https://curanahealth.com/interoperability-api/
+- type: Authentication
+  url: authentication/curana-health-authentication.yml
+- type: OAuthScopes
+  url: scopes/curana-health-scopes.yml
+- type: Conventions
+  url: conventions/curana-health-conventions.yml
+- type: Conformance
+  url: conformance/curana-health-conformance.yml
+- type: ErrorCatalog
+  url: errors/curana-health-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/curana-health-lifecycle.yml
+- type: Deprecation
+  url: https://curanahealth.com/wp-content/uploads/2025/11/CuranaCMSAPI-Release-Policy-Clean-and-Final.pdf
+- type: ChangeLog
+  url: changelog/curana-health-changelog.yml
+- type: Sandbox
+  url: sandbox/curana-health-sandbox.yml
+- type: DataModel
+  url: data-model/curana-health-data-model.yml
+- type: MCPServer
+  url: mcp/curana-health-mcp.yml
+- type: LLMsTxt
+  url: llms/curana-health-llms.txt
+- type: WellKnown
+  url: well-known/curana-health-well-known.yml
+- type: DomainSecurity
+  url: security/curana-health-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

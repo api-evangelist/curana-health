@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+source: https://curanahealth.com/wp-content/uploads/2026/04/CMS_API_Releases-Notes-1.pdf
+docs: https://curanahealth.com/interoperability-api/
+scheme: semantic-major (uri-path v1)
+current_version: '1.0'
+entries:
+- version: '1.0'
+  date: '2026-04'
+  type: release
+  highlights:
+  - Initial published Release Notes for the Curana Health CMS Interoperability (Patient
+    Access) FHIR R4 API.
+  - FHIR R4 Patient Access resources (Patient, Coverage, ExplanationOfBenefit, clinical
+    resources) and public Provider Directory surface.
+  source: https://curanahealth.com/wp-content/uploads/2026/04/CMS_API_Releases-Notes-1.pdf
+notes: >-
+  Curana Health publishes dated Release Notes (v1.0, April 2026) as a PDF governed by the
+  CMS API Release Policy rather than an HTML changelog feed. Only the current published
+  window is captured; the Release Notes PDF is the source of truth.

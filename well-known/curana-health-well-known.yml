@@ -1,0 +1,18 @@
+generated: '2026-07-18'
+method: searched
+note: >-
+  Probed the /.well-known/ discovery surface and FHIR capability endpoints on both the
+  website host (curanahealth.com) and the API host (fhir.curanahealth.com). None are
+  publicly served — the FHIR metadata/CapabilityStatement and SMART configuration require
+  authorization and are not anonymously reachable. Absence recorded as valid data.
+hosts:
+- host: https://fhir.curanahealth.com
+  documents:
+  - { path: /v1/api/metadata, status: 404 }
+  - { path: /.well-known/smart-configuration, status: 404 }
+  - { path: /v1/api/.well-known/smart-configuration, status: 404 }
+  - { path: /.well-known/openid-configuration, status: 404 }
+  - { path: /.well-known/security.txt, status: 404 }
+- host: https://curanahealth.com
+  documents:
+  - { path: /.well-known/security.txt, status: 404 }

@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: searched
+source: https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf
+docs: https://curanahealth.com/interoperability-api/
+model: >-
+  Access tokens carry explicitly-declared scopes that determine the resources an
+  application may access; wildcards are not supported. The Third-Party Application Owner
+  User Guide documents two scope groups. Exact scope strings are not reproduced verbatim
+  here to avoid fabrication; each group is described by the FHIR resources it governs and
+  the scope count published in the guide.
+scope_groups:
+- name: Public Access
+  count: 8
+  authorization: none (public Provider Directory per CMS-9115-F)
+  covers_resources:
+  - Practitioner
+  - PractitionerRole
+  - Organization
+  - Location
+  - InsurancePlan
+  - MedicationKnowledge
+  - Medication
+  - List
+- name: Patient Access
+  count: 12
+  authorization: OAuth 2.0 member consent required
+  covers_resources:
+  - Patient
+  - Coverage
+  - ExplanationOfBenefit
+  - Condition
+  - AllergyIntolerance
+  - Immunization
+  - CarePlan
+  - CareTeam
+  - Goal
+  - Observation
+  - Procedure
+  - MedicationRequest
+  - DocumentReference

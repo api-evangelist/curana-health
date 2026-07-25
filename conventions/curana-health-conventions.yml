@@ -1,0 +1,43 @@
+generated: '2026-07-18'
+method: searched
+source: https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf
+docs: https://curanahealth.com/interoperability-api/
+api: Curana Health Interoperability API (FHIR R4)
+base_url: https://fhir.curanahealth.com/v1/api
+authentication:
+  style: OAuth 2.0 bearer token (member-authorized); public Provider Directory unauthenticated
+  ref: authentication/curana-health-authentication.yml
+http:
+  methods: [GET]
+  read_only: true
+  note: Patient Access API is read-only; no create/update/delete operations documented.
+idempotency:
+  supported: false
+  note: >-
+    Read-only GET surface; no state-changing operations, so no idempotency-key contract
+    applies.
+pagination:
+  style: offset-limit
+  params:
+    offset: Zero-based record offset (e.g. offset=0)
+    limit: Page size (e.g. limit=10)
+  response: FHIR Bundle with link entries carrying offset/limit query parameters
+versioning:
+  scheme: uri-path
+  current: v1
+  path: /v1/api
+media_type: application/fhir+json (FHIR R4 / 4.0.1)
+response_envelope:
+  type: FHIR Bundle (searchset) for collections; individual FHIR resources for reads
+error_envelope:
+  type: FHIR OperationOutcome
+  ref: errors/curana-health-problem-types.yml
+consent:
+  revocable: true
+  note: Members may revoke app consent; subsequent requests return invalid-token errors.
+cross_links:
+  errors: errors/curana-health-problem-types.yml
+  lifecycle: lifecycle/curana-health-lifecycle.yml
+  authentication: authentication/curana-health-authentication.yml
+  scopes: scopes/curana-health-scopes.yml
+  conformance: conformance/curana-health-conformance.yml

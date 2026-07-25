@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: searched
+source: https://curanahealth.com/interoperability-api/
+evidence_docs:
+  - https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf
+standards:
+- id: fhir-r4
+  conforms: true
+  evidence: >-
+    User guide labels every resource "Resource Specification: FHIR R4"; HL7 FHIR
+    Release 4.0.1 is the CMS/ONC-mandated foundational standard.
+- id: cms-9115-f
+  conforms: true
+  evidence: >-
+    Interoperability API page states support for the CMS Interoperability and Patient
+    Access final rule (CMS-9115-F).
+- id: onc-cures-act
+  conforms: true
+  evidence: >-
+    Page cites ONC 21st Century Cures Act final rule (45 CFR 170.213 and 170.215).
+- id: carin-bb
+  conforms: true
+  evidence: >-
+    ExplanationOfBenefit responses use the CARIN Blue Button C4BBAdjudication code
+    system (http://hl7.org/fhir/us/carinbb/CodeSystem/C4BBAdjudication).
+- id: us-core
+  conforms: true
+  evidence: >-
+    Clinical resources reference US Core StructureDefinitions
+    (http://hl7.org/fhir/us/core/StructureDefinition/...).
+- id: oauth2
+  conforms: true
+  evidence: User guide documents OAuth 2.0 member authorization with scoped access tokens.
+- id: smart-on-fhir
+  conforms: true
+  evidence: OAuth 2.0 scoped FHIR resource access consistent with SMART on FHIR patterns.
+- id: hipaa
+  conforms: true
+  evidence: >-
+    Curana Health Medical Group Notice of Privacy Practices published; API governs
+    protected health information under HIPAA.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use FHIR OperationOutcome, not RFC 9457 application/problem+json.

@@ -1,0 +1,32 @@
+# Curana Health
+
+> Curana Health is a value-based senior-living healthcare company delivering on-site primary care, behavioral health, palliative care, and chronic-condition management to 250,000+ residents across 2,000+ communities in 30+ states. For CMS-9115-F / ONC 21st Century Cures Act compliance it publishes a standards-based FHIR R4 Interoperability (Patient Access) API that lets Medicare Advantage members authorize third-party apps to read their claims, encounter, and clinical data over OAuth 2.0, plus a public provider-directory surface.
+
+## APIs
+
+- [Curana Health Interoperability API](https://curanahealth.com/interoperability-api/): FHIR R4 (4.0.1) Patient Access API. Base URL https://fhir.curanahealth.com/v1/api. Read-only GET, offset/limit pagination, FHIR Bundle responses, OAuth 2.0 member authorization.
+
+## Docs
+
+- [Interoperability API overview](https://curanahealth.com/interoperability-api/): CMS-9115-F / ONC Cures Act program page and payer list.
+- [Third-Party Application Owner User Guide (PDF)](https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf): API reference — endpoints, resources, scopes, OAuth flow.
+- [Patient API Access / registration form](https://curanahealth.com/patient-api-access-form/): Sandbox and Production app registration.
+- [Member Data User Access](https://curanahealth.com/member-data-user-access/): member-side data access request.
+
+## Policies
+
+- [Terms of Service (PDF)](https://curanahealtstg.wpenginepowered.com/wp-content/uploads/CuranaCMSAPI-Terms-of-Service-Clean-and-Final.pdf)
+- [Usage Policy (PDF)](https://curanahealth.com/wp-content/uploads/2025/11/CMSAPI-Usage-Policy-Clean-and-Final.pdf)
+- [Release Policy (PDF)](https://curanahealth.com/wp-content/uploads/2025/11/CuranaCMSAPI-Release-Policy-Clean-and-Final.pdf)
+- [Release Notes v1.0 (PDF)](https://curanahealth.com/wp-content/uploads/2026/04/CMS_API_Releases-Notes-1.pdf)
+- [Privacy Policy](https://curanahealth.com/privacy-policy/)
+
+## Specs (API Evangelist enrichment artifacts)
+
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/curana-health/refs/heads/main/authentication/curana-health-authentication.yml)
+- [OAuth Scopes](https://raw.githubusercontent.com/api-evangelist/curana-health/refs/heads/main/scopes/curana-health-scopes.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/curana-health/refs/heads/main/conventions/curana-health-conventions.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/curana-health/refs/heads/main/conformance/curana-health-conformance.yml)
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/curana-health/refs/heads/main/errors/curana-health-problem-types.yml)
+- [Data model](https://raw.githubusercontent.com/api-evangelist/curana-health/refs/heads/main/data-model/curana-health-data-model.yml)
+- [MCP server (candidate)](https://raw.githubusercontent.com/api-evangelist/curana-health/refs/heads/main/mcp/curana-health-mcp.yml)

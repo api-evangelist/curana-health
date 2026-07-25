@@ -1,0 +1,89 @@
+generated: '2026-07-18'
+method: derived
+source: https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf
+model: FHIR R4 (4.0.1)
+note: >-
+  Entity graph derived from the documented FHIR R4 resources and their standard FHIR
+  reference fields (subject/patient, beneficiary, performer/recorder, requester). The
+  Patient resource is the hub of the Patient Access surface; the Provider Directory
+  resources (Practitioner, Organization, Location, InsurancePlan) form the public graph.
+entities:
+- name: Patient
+  group: patient-access
+  central: true
+- name: Coverage
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: beneficiary }
+- name: ExplanationOfBenefit
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: patient }
+  - { type: has_one, target: Coverage, via: insurance.coverage }
+- name: Condition
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: subject }
+- name: AllergyIntolerance
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: patient }
+- name: Immunization
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: patient }
+- name: CarePlan
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: subject }
+  - { type: has_many, target: CareTeam, via: careTeam }
+  - { type: has_many, target: Goal, via: goal }
+- name: CareTeam
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: subject }
+- name: Goal
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: subject }
+- name: Observation
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: subject }
+- name: Procedure
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: subject }
+- name: MedicationRequest
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: subject }
+  - { type: has_one, target: Medication, via: medicationReference }
+- name: DocumentReference
+  group: patient-access
+  relationships:
+  - { type: belongs_to, target: Patient, via: subject }
+- name: Practitioner
+  group: provider-directory
+- name: PractitionerRole
+  group: provider-directory
+  relationships:
+  - { type: belongs_to, target: Practitioner, via: practitioner }
+  - { type: belongs_to, target: Organization, via: organization }
+  - { type: has_many, target: Location, via: location }
+- name: Organization
+  group: provider-directory
+- name: Location
+  group: provider-directory
+  relationships:
+  - { type: belongs_to, target: Organization, via: managingOrganization }
+- name: InsurancePlan
+  group: provider-directory
+  relationships:
+  - { type: belongs_to, target: Organization, via: ownedBy }
+- name: Medication
+  group: provider-directory
+- name: MedicationKnowledge
+  group: provider-directory
+- name: List
+  group: provider-directory
