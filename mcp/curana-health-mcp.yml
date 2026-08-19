@@ -2,33 +2,98 @@ generated: '2026-07-18'
 method: derived
 status: candidate
 source: https://curanahealth.com/wp-content/uploads/2026/04/3rd_PARTY_CMS_APIS_v2.2.pdf
-note: >-
-  No official hosted MCP server was found for Curana Health. This is a candidate tool list
-  derived one-to-one from the documented read (GET) operations of the FHIR R4 Patient
-  Access API. Patient-access tools require an OAuth 2.0 member-authorized token with the
-  appropriate scope; provider-directory tools are public per CMS-9115-F.
+note: No official hosted MCP server was found for Curana Health. This is a candidate tool list derived
+  one-to-one from the documented read (GET) operations of the FHIR R4 Patient Access API. Patient-access
+  tools require an OAuth 2.0 member-authorized token with the appropriate scope; provider-directory tools
+  are public per CMS-9115-F.
 server:
   name: curana-health
   transport: http
   base_url: https://fhir.curanahealth.com/v1/api
 tools:
-- { name: get_patient, description: Read Patient demographics, group: patient-access, source_operation: "GET /v1/api/Patient" }
-- { name: list_coverage, description: List member Coverage, group: patient-access, source_operation: "GET /v1/api/Coverage" }
-- { name: list_explanation_of_benefit, description: List ExplanationOfBenefit (CARIN BB claims), group: patient-access, source_operation: "GET /v1/api/ExplanationOfBenefit" }
-- { name: list_condition, description: List Conditions, group: patient-access, source_operation: "GET /v1/api/Condition" }
-- { name: list_allergy_intolerance, description: List AllergyIntolerance, group: patient-access, source_operation: "GET /v1/api/AllergyIntolerance" }
-- { name: list_immunization, description: List Immunizations, group: patient-access, source_operation: "GET /v1/api/Immunization" }
-- { name: list_care_plan, description: List CarePlans, group: patient-access, source_operation: "GET /v1/api/CarePlan" }
-- { name: list_care_team, description: List CareTeams, group: patient-access, source_operation: "GET /v1/api/CareTeam" }
-- { name: list_goal, description: List Goals, group: patient-access, source_operation: "GET /v1/api/Goal" }
-- { name: list_observation, description: List Observations, group: patient-access, source_operation: "GET /v1/api/Observation" }
-- { name: list_procedure, description: List Procedures, group: patient-access, source_operation: "GET /v1/api/Procedure" }
-- { name: list_medication_request, description: List MedicationRequests, group: patient-access, source_operation: "GET /v1/api/MedicationRequest" }
-- { name: list_document_reference, description: List DocumentReferences, group: patient-access, source_operation: "GET /v1/api/Document" }
-- { name: list_practitioner_role, description: List PractitionerRole (provider directory), group: provider-directory, source_operation: "GET /v1/api/PractitionerRole" }
-- { name: list_organization, description: List Organizations (provider directory), group: provider-directory, source_operation: "GET /v1/api/Organization" }
-- { name: list_location, description: List Locations (provider directory), group: provider-directory, source_operation: "GET /v1/api/Location" }
-- { name: list_insurance_plan, description: List InsurancePlans, group: provider-directory, source_operation: "GET /v1/api/InsurancePlan" }
-- { name: list_medication, description: List Medications, group: provider-directory, source_operation: "GET /v1/api/Medication" }
-- { name: list_medication_knowledge, description: List MedicationKnowledge, group: provider-directory, source_operation: "GET /v1/api/MedicationKnowledge" }
-- { name: get_list, description: Read FHIR List resource, group: provider-directory, source_operation: "GET /v1/api/List" }
+- name: get_patient
+  description: Read Patient demographics
+  group: patient-access
+  source_operation: GET /v1/api/Patient
+- name: list_coverage
+  description: List member Coverage
+  group: patient-access
+  source_operation: GET /v1/api/Coverage
+- name: list_explanation_of_benefit
+  description: List ExplanationOfBenefit (CARIN BB claims)
+  group: patient-access
+  source_operation: GET /v1/api/ExplanationOfBenefit
+- name: list_condition
+  description: List Conditions
+  group: patient-access
+  source_operation: GET /v1/api/Condition
+- name: list_allergy_intolerance
+  description: List AllergyIntolerance
+  group: patient-access
+  source_operation: GET /v1/api/AllergyIntolerance
+- name: list_immunization
+  description: List Immunizations
+  group: patient-access
+  source_operation: GET /v1/api/Immunization
+- name: list_care_plan
+  description: List CarePlans
+  group: patient-access
+  source_operation: GET /v1/api/CarePlan
+- name: list_care_team
+  description: List CareTeams
+  group: patient-access
+  source_operation: GET /v1/api/CareTeam
+- name: list_goal
+  description: List Goals
+  group: patient-access
+  source_operation: GET /v1/api/Goal
+- name: list_observation
+  description: List Observations
+  group: patient-access
+  source_operation: GET /v1/api/Observation
+- name: list_procedure
+  description: List Procedures
+  group: patient-access
+  source_operation: GET /v1/api/Procedure
+- name: list_medication_request
+  description: List MedicationRequests
+  group: patient-access
+  source_operation: GET /v1/api/MedicationRequest
+- name: list_document_reference
+  description: List DocumentReferences
+  group: patient-access
+  source_operation: GET /v1/api/Document
+- name: list_practitioner_role
+  description: List PractitionerRole (provider directory)
+  group: provider-directory
+  source_operation: GET /v1/api/PractitionerRole
+- name: list_organization
+  description: List Organizations (provider directory)
+  group: provider-directory
+  source_operation: GET /v1/api/Organization
+- name: list_location
+  description: List Locations (provider directory)
+  group: provider-directory
+  source_operation: GET /v1/api/Location
+- name: list_insurance_plan
+  description: List InsurancePlans
+  group: provider-directory
+  source_operation: GET /v1/api/InsurancePlan
+- name: list_medication
+  description: List Medications
+  group: provider-directory
+  source_operation: GET /v1/api/Medication
+- name: list_medication_knowledge
+  description: List MedicationKnowledge
+  group: provider-directory
+  source_operation: GET /v1/api/MedicationKnowledge
+- name: get_list
+  description: Read FHIR List resource
+  group: provider-directory
+  source_operation: GET /v1/api/List
+deployment:
+  mode: none
+  verified: derived
+  tools: 20
+  checked: '2026-08-12'
+  source: catalog MCP census
